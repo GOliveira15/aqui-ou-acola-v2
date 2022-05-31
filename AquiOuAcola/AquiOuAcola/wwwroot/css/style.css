@@ -1,0 +1,153 @@
+﻿#main {
+    margin: 50px;
+    display: block;
+    text-align: center;
+    margin-top: 100px;
+}
+
+#buscador{
+    margin-top: 50px;
+}
+
+#buscar {
+    height: 50px;
+    background-color: #C4C4C4;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    padding: 25px;
+}
+
+#buscar input{
+    flex: 1;
+    height: 40px;
+    width: 500px;
+    max-width: 100%;
+    border-radius: 100px;
+    border: none;
+    outline: none;
+    background-color: #C4C4C4;
+    padding-left: 15px;
+}
+
+#span{
+    margin-top: 25px;
+}
+
+#span a{
+    text-decoration: none;
+    color: #00345C;
+}
+
+#span a:hover{
+    color: #6F8197;
+}
+
+.input {
+    height: 40px;
+    border-radius: 100px;
+    border: none;
+    outline: none;
+    background-color: #C4C4C4;
+    margin-bottom: 25px;
+}
+
+.input2 {
+    height: 150px;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+    background-color: #C4C4C4;
+    margin-bottom: 25px;
+}
+
+
+#formdisplay {
+    display: flex;
+    justify-content: center;
+}
+
+#f1{
+    padding-right: 15px;
+}
+
+#botao1 {
+    background-color: #32CD32;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+}
+
+#botao1 input {
+    border-radius: 100px;
+    border: none;
+    outline: none;
+    background-color: #32CD32;
+    color: white;
+}
+
+#botao2 {
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+}
+
+#botao2 input {
+    border-radius: 100px;
+    border: none;
+    outline: none;
+    background-color: #f5f5f5;
+}
+
+#botoesdisplay{
+    display: flex;
+}
+
+#fotoperfil{
+    border-radius: 100px;
+    height: 150px;
+    width: 150px;
+}
+
+#displayfoto{
+    display: block;
+    margin-bottom: 50px;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#displayfoto input{
+    font-size: 12px;
+    margin-top: 15px;
+}
+
+#cadastroMain{
+    margin-top: 25px;
+}
+
+footer{
+    margin-top: 50px;
+}
+
+#cursoMain{
+    display: block;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+#createMain{
+    display: block;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+#confClass{
+    background-color: white;
+    height: 100px;
+    width: 100px;
+}

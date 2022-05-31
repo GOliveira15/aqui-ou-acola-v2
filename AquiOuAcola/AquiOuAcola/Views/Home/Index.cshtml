@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Início";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <div id="main">
+                <div>
+                    <img src="~/src/AquiOuAcola.png" style="max-width: 100%" />
+                </div>
+
+                <div id="buscador">
+                    <form action="/Cursos/Index" method="get">
+                        <div class="form-group" id="buscar">
+                            <i class="bi bi-search"></i>
+                            <input type="search" name="query" placeholder="Buscar um curso..." size="100" maxlength="100">
+                        </div>
+                    </form>
+                </div>
+
+                <div id="span">
+                    <a href="#">VOCÊ PRECISA DE AJUDA?</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+</div>

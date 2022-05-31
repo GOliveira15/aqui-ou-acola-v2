@@ -1,0 +1,111 @@
+﻿@model IEnumerable<AquiOuAcola.Entidades.Curso>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <div id="main">
+                <div>
+                    <img src="~/src/AquiOuAcola.png" style="width: 200px; height:100px; max-width: 100%" />
+                </div>
+
+                <div id="buscador">
+                    <form action="/Cursos/Index" method="get">
+                        <div class="form-group" id="buscar">
+                            <i class="bi bi-search"></i>
+                            <input type="search" name="query" placeholder="Buscar um curso..." size="100" maxlength="100">
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.foto)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.nome)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.disponibilidade)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.gratuito)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.link)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.descricao)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.nivel)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                <a asp-controller="CursoFavorito" asp-action="Add" asp-route-id="@item.Id" class="btn btn-success">Favoritar</a>
+                            </td>
+                            <td>
+                                <img src="~/Imagens/@item.foto" width="100" height="100" />
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.nome)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.disponibilidade)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.gratuito)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.link)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.descricao)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.nivel)
+                            </td>
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <!-- outra opção de exibição para cursos-->
+            @foreach (var item in Model)
+            {
+                <div class="card col-8 offset-2">
+                    <div class="card-header">@item.nome</div>
+                    <div class="card-body">
+                        <a href="@item.link">
+                            <img src="~/Imagens/@item.foto" width="500" height="500" />
+                        </a>
+                    </div>
+                    <div class="card-footer">
+                       <a asp-controller="CursoFavorito" asp-action="Add" asp-route-id="@item.Id" class="btn btn-success">Favoritar</a> @item.descricao
+                    </div>
+                </div>
+                <br />
+            }
+
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+﻿@if(TempData["erro"] != null) { 
+    <div class="alert alert-danger">
+        @TempData["erro"]
+    </div>
+}
+
+<form action="/Login/Entrar" method="post">
+    <label>Usuário</label>
+    <input type="text" name="email" />
+    <br />
+
+    <label>Senha</label>
+    <input type="password" name="senha" />
+    <br />
+
+    <button type="submit">Logar</button>
+</form>

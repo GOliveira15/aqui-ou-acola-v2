@@ -1,0 +1,90 @@
+﻿@model AquiOuAcola.Entidades.Curso
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid" id="cadastroMain">
+    <h1 class="text-center" style="margin-bottom: 50px;">Compartilhe um curso!</h1>
+
+    <form asp-action="Create" enctype="multipart/form-data" id="createMain">
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <div class="d-flex">
+                    <div class="col-md-3">
+                        <div>
+                            <img src="~/src/FotoDePerfil.png" style="width: 150px;" />
+                        </div>
+                        <div>
+                            <input type="file" name="foto" />
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+
+                        <div class="form-group">
+                            <label asp-for="nome" class="control-label">Nome</label>
+                            <input asp-for="nome" class="form-control input" />
+                            <span asp-validation-for="nome" class="text-danger"></span>
+                        </div>
+                        <div class="d-flex">
+                            <div class="form-group">
+                                <label asp-for="disponibilidade" class="control-label">Disponibilidade</label>
+                                <input asp-for="disponibilidade" class="form-control input" />
+                                <span asp-validation-for="disponibilidade" class="text-danger"></span>
+                            </div>
+                            <div>
+                                <label asp-for="gratuito" class="control-label">Gratuito</label><br />
+                                <input class="form-check-input" type="radio" name="gratuito" value="Gratuito" /> Sim
+                                <input class="form-check-input" type="radio" name="gratuito" value="Pago" /> Não
+                            </div>
+                        </div>
+                        <div>
+                            <div class="form-group">
+                                <label asp-for="link" class="control-label">Link</label>
+                                <input asp-for="link" class="form-control input" />
+                                <span asp-validation-for="link" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="descricao" class="control-label">Descrição</label>
+                    <input asp-for="descricao" class="form-control input2" style="height: 150px;" />
+                    <span asp-validation-for="descricao" class="text-danger"></span>
+                </div>
+
+                <div>
+                    <label asp-for="nivel" class="control-label">Nível</label>
+                    <input type="radio" name="nivel" value="Iniciante" /> Iniciante
+                    <input type="radio" name="nivel" value="Intermediário" /> Intermediário
+                    <input type="radio" name="nivel" value="Avançado" /> Avançado
+                </div>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+
+        <div class="row">
+            <div class="d-flex justify-content-between" style="margin-top: 50px">
+                <div class="text-center" id="botao2">
+                    <i class="bi bi-arrow-left"></i>
+                    <input type="submit" value="Voltar para o Perfil" style="padding-left: 10px;" />
+                </div>
+
+                <div class="text-center" id="botao1">
+                    <input type="submit" value="Compartilhar Curso" style="padding-right: 10px;" />
+                    <i class="bi bi-arrow-right"></i>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <footer></footer>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
