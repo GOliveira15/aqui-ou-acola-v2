@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<AquiOuAcola.Entidades.Curso>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Resultados";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -23,88 +23,60 @@
                     </form>
                 </div>
             </div>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-3">
+            <form action="/Cursos/Index" method="get">
+                Filtros
+                <hr />
 
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>
-                            @Html.DisplayNameFor(model => model.foto)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.nome)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.disponibilidade)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.gratuito)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.link)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.descricao)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.nivel)
-                        </th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var item in Model)
-                    {
-                        <tr>
-                            <td>
-                                <a asp-controller="CursoFavorito" asp-action="Add" asp-route-id="@item.Id" class="btn btn-success">Favoritar</a>
-                            </td>
-                            <td>
-                                <img src="~/Imagens/@item.foto" width="100" height="100" />
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.nome)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.disponibilidade)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.gratuito)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.link)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.descricao)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.nivel)
-                            </td>
-                            <td>
-                                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                            </td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
-            <!-- outra opção de exibição para cursos-->
+                <div>
+                    <label class="control-label">Gratuito</label><br />
+                    <input class="form-check-input" type="checkbox" name="query" value="Gratuito" /> Sim
+                    <br />
+                    <input class="form-check-input" type="checkbox" name="query" value="Pago" /> Não
+                </div>
+
+                <hr />
+
+                <div>
+                    <label class="control-label">Nível</label><br />
+                    <input class="form-check-input" type="checkbox" name="query" value="Iniciante" /> Iniciante<br />
+                    <input class="form-check-input"  type="checkbox" name="query" value="Intermediário" /> Intermediário<br />
+                    <input class="form-check-input"  type="checkbox" name="query" value="Avançado" /> Avançado
+                </div>
+
+                <hr />
+
+                <button type="submit" class="btn btn-info">Filtrar</button>
+            </form>
+        </div>
+        <div class="col-md-7">
             @foreach (var item in Model)
             {
-                <div class="card col-8 offset-2">
-                    <div class="card-header">@item.nome</div>
-                    <div class="card-body">
-                        <a href="@item.link">
-                            <img src="~/Imagens/@item.foto" width="500" height="500" />
-                        </a>
+                <div class="d-flex" id="resultadoBusca">
+                    <div id="resultadoFoto">
+                        <img src="~/Imagens/@item.foto" width="200" height="200" />
                     </div>
-                    <div class="card-footer">
-                       <a asp-controller="CursoFavorito" asp-action="Add" asp-route-id="@item.Id" class="btn btn-success">Favoritar</a> @item.descricao
+                    <div id="resultadoConteudo">
+                        @item.nome
+                        <br />
+                        Adicionado por
+
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                @item.gratuito
+                            </div>
+                            <div>
+                                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-outline-info btn-sm">Saber mais</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <br />
             }
-
         </div>
         <div class="col-md-1"></div>
     </div>

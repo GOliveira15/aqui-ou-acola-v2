@@ -1,4 +1,10 @@
-﻿@if(TempData["erro"] != null) { 
+﻿@{
+    ViewData["Title"] = "Entrar";
+}
+
+
+@if (TempData["erro"] != null)
+{
     <div class="alert alert-danger">
         @TempData["erro"]
     </div>

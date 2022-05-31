@@ -151,3 +151,21 @@ footer{
     height: 100px;
     width: 100px;
 }
+
+#resultadoBusca{
+    margin-bottom: 25px;
+}
+
+#resultadoConteudo {
+    height: 200px;
+    width: 400px;
+    background-color: white;
+    padding: 50px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+#resultadoFoto img {
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+}
