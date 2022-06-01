@@ -1,68 +1,50 @@
 ﻿@model AquiOuAcola.Entidades.Curso
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Saiba Mais";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Details</h1>
-
-<div>
-    <h4>Curso</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Id_Usuario)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Id_Usuario)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.foto)
-        </dt>
-        <dd class = "col-sm-10">
-            <img src="~/Imagens/@Html.DisplayFor(model => model.foto)" />
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.nome)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.nome)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.disponibilidade)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.disponibilidade)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.gratuito)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.gratuito)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.link)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.link)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.descricao)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.descricao)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.nivel)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.nivel)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
-    <a asp-action="Index">Back to List</a>
-    <a asp-controller="CursoFavorito" asp-action="Add" asp-route-id="@Model.Id" class="btn btn-success">Favoritar</a>
+<div class="container">
+    <div id="cursoMain">
+        <div class="row">
+            <div class="col-md-8" id="cursoConteudo">
+                @Html.DisplayFor(model => model.nome)
+                <br />
+                @Html.DisplayFor(model => model.gratuito)
+                <br />
+                @Html.DisplayFor(model => model.descricao)
+                <br /><br />
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has
+                survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised
+                in the 1960s with the release of Letraset sheets
+                containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                <br /><br />
+                @Html.DisplayFor(model => model.link)
+            </div>
+            <div class="col-md-4">
+                <div id="cursoFoto">
+                    <img src="~/Imagens/@Html.DisplayFor(model => model.foto)"/>
+                </div>
+                <div class="d-block">
+                    Salvo X vezes
+                    <div>
+                        <a asp-controller="CursoFavorito" asp-action="Add" asp-route-id="@Model.Id" class="btn btn-info">Favoritar</a>
+                    </div>
+                    <div>
+                        <a href="@Html.DisplayFor(model => model.link)" class="btn btn-outline-info">Acessar</a>
+                    </div>
+                    Denunciar
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="text-center" id="cursoVoltar">
+                <i class="bi bi-arrow-left"></i>
+                <a asp-action="Index" style="padding-left: 10px;">Voltar para o Buscador</a>
+            </div>
+        </div>
+        <footer></footer>
+    </div>
 </div>

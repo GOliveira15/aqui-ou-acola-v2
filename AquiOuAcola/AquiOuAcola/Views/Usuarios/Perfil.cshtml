@@ -4,10 +4,25 @@
 }
 
 <div class="container">
+    @foreach (var item in Model)
+    {
+        <div class="d-flex justify-content-between">
+            <div>
+                @item.Usuario.nome
+            </div>
+            <div>
+                <img src="~/Imagens/@item.Usuario.foto" width="200" height="200" style="border-radius: 100%;"/>
+            </div>
+            <div>
+                <a class="btn btn-outline-info">Adicionar</a>
+            </div>
+        </div>
+    }
+
     <div class="row">
         @foreach (var item in Model)
         {
-            <div class="col-md-2" style="margin-right: 50px; margin-bottom: 50px;">
+            <div class="col-md-2" style="margin: 25px;">
                 <img src="~/Imagens/@item.Curso.foto" width="200" height="200" />
             </div>
         }
