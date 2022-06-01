@@ -211,3 +211,23 @@ footer{
 #cursoPerfil{
     margin-top: 25px;
 }
+
+#entrar{
+    background-color: white;
+    padding: 50px;
+    border-radius: 25px;
+    margin-top: 50px;
+}
+
+#esqSenha{
+    font-size: 12px;
+    text-decoration: none;
+    margin-bottom: 25px;
+}
+
+#entrarBotoes{
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    text-align: center;
+}
