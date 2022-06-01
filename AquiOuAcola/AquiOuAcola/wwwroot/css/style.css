@@ -2,7 +2,7 @@
     margin: 50px;
     display: block;
     text-align: center;
-    margin-top: 100px;
+    margin-top: 50px;
 }
 
 #buscador{
@@ -172,7 +172,7 @@ footer{
 
 #cursoConteudo{
     background-color: white;
-    padding: 50px;
+    padding: 75px;
     border-radius: 25px;
 }
 
@@ -187,5 +187,27 @@ footer{
 }
 
 #cursoVoltar {
+    margin-top: 50px;
+}
+
+
+#cursoCPerfil {
+    width: 200px;
+    padding: 25px;
+    background-color: white;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+#cursoFPerfil img{
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+#fotoPerfil img{
+    border-radius: 100%;
+}
+
+#cursoPerfil{
     margin-top: 50px;
 }

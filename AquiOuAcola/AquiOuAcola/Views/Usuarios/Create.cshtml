@@ -16,7 +16,7 @@
                     <img src="~/src/FotoDePerfil2.png" id="fotoperfil" />
                 </div>
                 <div>
-                    <input type="file" name="foto" />
+                    <input type="file" name="foto" required />
                 </div>
             </div>
         </div>
@@ -25,36 +25,36 @@
             <div class="col-md-1"></div>
             <div class="col-md-5">
                 <div class="form-group">
-                    <label asp-for="nome" class="control-label">Nome</label>
-                    <input asp-for="nome" class="form-control input" />
+                    <label asp-for="nome" class="control-label">Nome:</label>
+                    <input asp-for="nome" class="form-control input" required />
                     <span asp-validation-for="nome" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="sobrenome" class="control-label">Sobrenome</label>
-                    <input asp-for="sobrenome" class="form-control input" />
+                    <label asp-for="sobrenome" class="control-label">Sobrenome:</label>
+                    <input asp-for="sobrenome" class="form-control input" required />
                     <span asp-validation-for="sobrenome" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="cidade" class="control-label">Cidade</label>
-                    <input asp-for="cidade" class="form-control input" />
+                    <label asp-for="cidade" class="control-label">Cidade:</label>
+                    <input asp-for="cidade" class="form-control input" required />
                     <span asp-validation-for="cidade" class="text-danger"></span>
                 </div>
             </div>
 
             <div class="col-md-5">
                 <div class="form-group">
-                    <label asp-for="email" class="control-label">E-mail</label>
-                    <input asp-for="email" class="form-control input" />
+                    <label asp-for="email" class="control-label">E-mail:</label>
+                    <input asp-for="email" class="form-control input" required />
                     <span asp-validation-for="email" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="senha" class="control-label">Senha</label>
-                    <input asp-for="senha" class="form-control input" />
+                    <label asp-for="senha" class="control-label">Senha:</label>
+                    <input asp-for="senha" type="password" class="form-control input" required />
                     <span asp-validation-for="senha" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label class="control-label">Confirme a senha</label>
-                    <input class="form-control input" />
+                    <label class="control-label">Confirme a senha:</label>
+                    <input class="form-control input" type="password" required />
                     <span class="text-danger"></span>
                 </div>
             </div>

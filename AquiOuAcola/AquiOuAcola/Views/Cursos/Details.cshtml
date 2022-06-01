@@ -1,10 +1,5 @@
 ﻿@model AquiOuAcola.Entidades.Curso
 
-@{
-    ViewData["Title"] = "Saiba Mais";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
-
 <div class="container">
     <div id="cursoMain">
         <div class="row">
@@ -25,7 +20,7 @@
             </div>
             <div class="col-md-4">
                 <div id="cursoFoto">
-                    <img src="~/Imagens/@Html.DisplayFor(model => model.foto)"/>
+                    <img src="~/Imagens/@Html.DisplayFor(model => model.foto)" />
                 </div>
                 <div class="d-block">
                     Salvo X vezes

@@ -42,7 +42,7 @@ namespace AquiOuAcola.Controllers
             try
             {
                 string caminhoParaSalvarImagem = caminhoServidor + "\\Imagens\\";
-                string novoNomeParaImagem = Guid.NewGuid().ToString() + "_" + foto.FileName;
+                string novoNomeParaImagem = foto.FileName;
 
                 if (!Directory.Exists(caminhoParaSalvarImagem))
                 {

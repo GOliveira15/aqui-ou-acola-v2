@@ -1,30 +1,62 @@
 ﻿@model List<AquiOuAcola.Entidades.CursoF>
+
 @{
     ViewData["Title"] = "Perfil";
 }
 
-<div class="container">
-    @foreach (var item in Model)
-    {
-        <div class="d-flex justify-content-between">
-            <div>
-                @item.Usuario.nome
-            </div>
-            <div>
-                <img src="~/Imagens/@item.Usuario.foto" width="200" height="200" style="border-radius: 100%;"/>
-            </div>
-            <div>
-                <a class="btn btn-outline-info">Adicionar</a>
-            </div>
-        </div>
-    }
+<div class="container" style="margin-top: 50px;">
 
     <div class="row">
         @foreach (var item in Model)
         {
-            <div class="col-md-2" style="margin: 25px;">
-                <img src="~/Imagens/@item.Curso.foto" width="200" height="200" />
+            <div class="d-flex justify-content-between align-items-end">
+                <div>
+                    @item.Usuario.nome, @item.Usuario.cidade
+                </div>
+                <div id="fotoPerfil">
+                    <img src="~/Imagens/@item.Usuario.foto" width="200" height="200" />
+                </div>
+                <div>
+                    <a class="btn btn-info">Adicionar</a>
+                    <a class="btn btn-outline-info">Buscar</a>
+                </div>
+            </div>
+            break;
+        }
+    </div>
+
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-4 col-md-2" style="margin: 15px;">
+                <div id="cursoPerfil">
+                    <div id="cursoFPerfil">
+                        <img src="~/Imagens/@item.Curso.foto" width="200" height="200" />
+                    </div>
+                    <div id="cursoCPerfil">
+                        @item.Curso.nome
+                        <br />
+                        Adicionado por
+                        <br />
+                        <br />
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                @item.Curso.gratuito
+                            </div>
+                            <div>
+                                <a class="btn btn-outline-info btn-sm">Saber mais</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         }
     </div>
+    <div class="row">
+        <div class="text-center" id="cursoVoltar">
+            <i class="bi bi-arrow-left"></i>
+            <a asp-controller="Home" asp-action="Index" style="padding-left: 10px;">Voltar para o Buscador</a>
+        </div>
+    </div>
+    <footer></footer>
 </div>
