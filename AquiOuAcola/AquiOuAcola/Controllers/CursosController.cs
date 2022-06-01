@@ -72,9 +72,12 @@ namespace AquiOuAcola.Controllers
 
                 collection.foto = novoNomeParaImagem;
 
+                var claimsIdentity = User.Identity as System.Security.Claims.ClaimsIdentity;
+                var IdUsuario = claimsIdentity.FindFirst(System.Security.Claims.ClaimTypes.Sid).Value;
+
                 Curso _cursos = new Curso();
 
-                _cursos.Id_Usuario = collection.Id_Usuario;
+                _cursos.Id_Usuario = Int32.Parse(IdUsuario);
                 _cursos.foto = collection.foto;
                 _cursos.nome = collection.nome;
                 _cursos.disponibilidade = collection.disponibilidade;

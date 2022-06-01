@@ -28,7 +28,10 @@ namespace AquiOuAcola.Controllers
 
         public IActionResult Privacy()
         {
-            List<CursoF> model = db.CursoF.Include(a => a.Curso).Include(a => a.Usuario).ToList();
+            var claimsIdentity = User.Identity as System.Security.Claims.ClaimsIdentity;
+            var Id_Usuario = Int32.Parse(claimsIdentity.FindFirst(System.Security.Claims.ClaimTypes.Sid).Value);
+
+            List<CursoF> model = db.CursoF.Where(a => a.UsuarioId == Id_Usuario).Include(a => a.Curso).Include(a => a.Usuario).ToList();
             return View(model);
            
         }
