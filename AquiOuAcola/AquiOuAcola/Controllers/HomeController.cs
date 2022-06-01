@@ -33,7 +33,6 @@ namespace AquiOuAcola.Controllers
 
             List<CursoF> model = db.CursoF.Where(a => a.UsuarioId == Id_Usuario).Include(a => a.Curso).Include(a => a.Usuario).ToList();
             return View(model);
-           
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

@@ -1,1 +1,15 @@
-﻿
+﻿@model List<AquiOuAcola.Entidades.CursoF>
+@{
+    ViewData["Title"] = "Perfil";
+}
+
+<div class="container">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-2" style="margin-right: 50px; margin-bottom: 50px;">
+                <img src="~/Imagens/@item.Curso.foto" width="200" height="200" />
+            </div>
+        }
+    </div>
+</div>
