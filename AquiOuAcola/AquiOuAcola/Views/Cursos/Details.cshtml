@@ -1,13 +1,20 @@
 ﻿@model AquiOuAcola.Entidades.Curso
 
+@{
+    ViewData["Title"] = "Saiba mais";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
 <div class="container">
     <div id="cursoMain">
         <div class="row">
             <div class="col-md-8" id="cursoConteudo">
-                @Html.DisplayFor(model => model.nome)
-                <br />
+                Buscador / Resultados / @Html.DisplayFor(model => model.nome)
+                <br /><br />
+                <h2>@Html.DisplayFor(model => model.nome)</h2>
                 @Html.DisplayFor(model => model.gratuito)
-                <br />
+                <br /><br />
+                <h6>Descrição:</h6>
                 @Html.DisplayFor(model => model.descricao)
                 <br /><br />
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
@@ -16,21 +23,23 @@
                 in the 1960s with the release of Letraset sheets
                 containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
                 <br /><br />
+                <h6>Disponível em:</h6>
                 @Html.DisplayFor(model => model.link)
+                <br /><br />
+                Adicionado por <a>Gabriel Oliveira</a>
             </div>
             <div class="col-md-4">
                 <div id="cursoFoto">
                     <img src="~/Imagens/@Html.DisplayFor(model => model.foto)" />
                 </div>
-                <div class="d-block">
-                    Salvo X vezes
+                <div class="d-block text-center" style="margin-top: 25px; padding: 15px;">
                     <div>
                         <a asp-controller="CursoFavorito" asp-action="Add" asp-route-id="@Model.Id" class="btn btn-info">Favoritar</a>
                     </div>
-                    <div>
+                    <div style="margin-top: 5px; margin-bottom: 15px;">
                         <a href="@Html.DisplayFor(model => model.link)" class="btn btn-outline-info">Acessar</a>
                     </div>
-                    Denunciar
+                    <p style="font-size: 12px;">DENUNCIAR</p>
                 </div>
             </div>
         </div>

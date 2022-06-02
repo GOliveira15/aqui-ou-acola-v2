@@ -2,6 +2,15 @@
     ViewData["Title"] = "Entrar";
 }
 
+<br />
+
+@if (TempData["erro"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["erro"]
+    </div>
+}
+
 <div class="container">
 
     <div class="row">
@@ -51,13 +60,6 @@
     </div>
 
     <br />
-
-    @if (TempData["erro"] != null)
-    {
-        <div class="alert alert-danger">
-            @TempData["erro"]
-        </div>
-    }
 
     <footer></footer>
 </div>
